@@ -89,5 +89,5 @@ function animate() {
     }
     c.fillText(fpsDisplay+" FPS", 25, 25);
 }
-
+// test
 animate();
