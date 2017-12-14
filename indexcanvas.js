@@ -26,16 +26,16 @@ addEventListener('resize', function () {
 
 addEventListener('click', function () {
    if (mouse.x < canvas.width / 2 && mouse.y < canvas.height / 2) {
-       window.open('mental.html', '_self');
+       window.open('mental/mental.html', '_self');
    }
     else if (mouse.x > canvas.width / 2 && mouse.y < canvas.height / 2) {
-       window.open('spiritual.html', '_self');
+       window.open('spiritual/spiritual.html', '_self');
    }
     else if (mouse.x < canvas.width / 2 && mouse.y > canvas.height / 2) {
-       window.open('physical.html', '_self');
+       window.open('physical/physical.html', '_self');
     }
     else {
-       window.open('emotional.html', '_self');
+       window.open('emotional/emotional.html', '_self');
     }
 });
 
@@ -86,7 +86,7 @@ function Particle(x, y, radius, color) {
         else if(Math.sin(this.radians) > 0 && Math.cos(this.radians) < 0){
             this.color = 'rgba(0, 0, 0, 1)';
         }
-        else if(Math.sin(this.radians) < 0 && Math.tan(this.radians) > 0){
+        else if(Math.sin(this.radians) < 0 && Math.cos(this.radians) < 0){
             this.color = 'rgba(255, 255, 255, 1)';
         }
         else{
