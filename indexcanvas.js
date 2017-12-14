@@ -44,6 +44,8 @@ for(let i = 0; i < touchEvents.length; i++){
     
 
 addEventListener('touchmove', event => {
+    mouse.x = event.clientX
+    mouse.y = event.clientY
     event.preventDefault();
     event.stopPropogation();
 }, false);
