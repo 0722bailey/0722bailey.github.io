@@ -82,7 +82,6 @@ function Stickman(){
             img.src='/stickmen/frame0.png'
         }
     }
-    console.log(frame);
 }
 
 // Implementation
