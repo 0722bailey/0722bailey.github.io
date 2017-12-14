@@ -11,7 +11,7 @@ var mouse = {
     y: innerHeight / 2
 };
 
-var touchEvents = ['click', 'touchstart']
+var touchEvents = ['click', 'touchend']
 
 // Event Listeners
 addEventListener('mousemove', function (event) {
