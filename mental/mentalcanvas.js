@@ -7,45 +7,51 @@ canvas.height = window.innerHeight - 5
 
 const alerts = [
     "La produit fini est une balance de tout les aspects mentale. Dans cette balance, je suis un personne parfait dans mes rêves qui est très intelligent et qui change le monde artistique et mentalistique. Je visionner un CEO d'un grand companie electronique, ou un artiste qui jouer devant des milles de personnes.",
+    
     "Pour avoir un aspect mentale balancé dans mon vie personnelle, je doit avoir plus des connaissances. Si j'utilise mon cerveaux beaucoup et si j'apprend plus des choses, ça donne mon cerveau des choses a faire, et ça prolongé mon mémoir pour longetemps.",
-    "alert 3",
-    "alert 4",
-    "alert 5",
-    "alert 6",
-    "alert 7",
-    "alert 8",
-    "alert 9",
-    "alert 10",
-    "alert 11",
-    "alert 12",
-    "alert 13",
-    "alert 14",
-    "alert 15",
-    "alert 16",
-    "alert 17",
-    "alert 18",
-    "alert 19",
-    "alert 20",
-    "alert 21",
-    "alert 22",
-    "alert 23",
-    "alert 24",
-    "alert 25",
-    "alert 26",
-    "alert 27",
-    "alert 28",
-    "alert 29",
-    "alert 30",
-    "alert 31",
-    "alert 32",
-    "alert 33",
-    "alert 34",
-    "alert 35",
-    "alert 36",
-    "alert 37",
-    "alert 38",
-    "alert 39",
-    "alert 40",
+    
+    "Mon aspet mentale doit être organizer pour être balancé, alors je doit pratique l'organization. Le cerveau est très complexe, et la vie est très complexe, alors si j'organize mes pensées et mon vie, je peux balancé un peu plus. ",
+    
+    "Pour être content dans ma vie mental, je dois suiver mes passions. Je suiver mes passions maintenant un petit peu, mais avec les autres distractions dans la vie c'est difficile de faire tout mes passions. Si je peux prendre la balance parfait de ce que je dois faire et ce que je veux faire, je peux avoir de balance dans ma vie mentale",
+    
+    "Plus des Connaissances: Connaisser par les autres. ",
+    
+    "Plus des Connaissances: Résoudre des problemes! Je peux commencer petit et finisser grand. Il y a beaucoup des problemes qui je doit utiliser mon cerveau pour résoudre. Si je résoudre des problèmes petit, je peux améliorer cette difficulté, et résoudre des problèmes plus et plus grand!",
+    
+    "Plus des Connaissances: Faire des choses très nouveaux",
+    "Meilleur Organization: Organizer mon schédule de vie.  ",
+    "Meilleur Organization: Fait plus des choses que je doit fait au futur maintenant",
+    "Meilleur Organization: Aide avec l'organization des autres. ",
+    "Suiver Mes Passions: fait des passions artistique",
+    "Suiver Mes Passions: fait des passions mentalistique",
+    "Suiver Mes Passions: devenir un expert dans un seul passion",
+    "Plus des Connaissances: ",
+    "Plus des Connaissances: ",
+    "Plus des Connaissances: ",
+    "Plus des Connaissances: ",
+    "Plus des Connaissances: ",
+    "Plus des Connaissances: ",
+    "Plus des Connaissances: ",
+    "Plus des Connaissances: ",
+    "Plus des Connaissances: ",
+    "Meilleur Organization: ",
+    "Meilleur Organization: ",
+    "Meilleur Organization: ",
+    "Meilleur Organization: ",
+    "Meilleur Organization: ",
+    "Meilleur Organization: ",
+    "Meilleur Organization: ",
+    "Meilleur Organization: ",
+    "Meilleur Organization: ",
+    "Suiver Mes Passions: ",
+    "Suiver Mes Passions: ",
+    "Suiver Mes Passions: ",
+    "Suiver Mes Passions: ",
+    "Suiver Mes Passions: ",
+    "Suiver Mes Passions: ",
+    "Suiver Mes Passions: ",
+    "Suiver Mes Passions: ",
+    "Suiver Mes Passions: ",
 ];
 
 
@@ -56,6 +62,12 @@ const mouse = {
 }
 
 const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66']
+
+var quote = new Image();
+quote.src = 'http://img.picturequotes.com/2/44/43701/half-the-game-is-mental-the-other-half-is-being-mental-quote-1.jpg'
+
+var quote2 = new Image();
+quote2.src = 'http://quotespics.net/wp-content/uploads/2016/07/Albert-Einstein-amzing-intelligence-quote.png'
 
 // Event Listeners
 addEventListener('mousemove', event => {
@@ -145,23 +157,38 @@ function init() {
         objects.push(new Object(canvas.width / 2, canvas.height / 2, 30, 'blue'));
     }
 }
-
+var increments = 0;
 // Animation Loop
 function animate() {
     requestAnimationFrame(animate)
     c.clearRect(0, 0, canvas.width, canvas.height)
-    
-    Rectangle(canvas.width / 2, 300, 256, 0);
-    for(var i = 1; i < 4; i++){
-        Rectangle(canvas.width / 2 -243 + (243* (i - 1)), 450, 128, i);
-    }
-    for(var i = 4; i < 13; i++){
-        Rectangle(canvas.width / 2 - 324 + (81 * (i - 4)), 550, 64, i);
-    }
     for(var i = 13; i < 40; i++){
+        c.beginPath();
+        c.moveTo(canvas.width / 2 - 324 + (81 * (Math.ceil(i / 3) - 5)), 550, 64);
+        c.lineTo(canvas.width / 2 -390  + (30 * (i - 13)), 625, 25);
+        c.stroke();
         Rectangle(canvas.width / 2 -390  + (30 * (i - 13)), 625, 25, i);
     }
+    for(var i = 4; i < 13; i++){
+        c.beginPath();
+        c.moveTo(canvas.width / 2 -243 + (243 * (Math.ceil(i / 3)-2)), 450)
+        c.lineTo(canvas.width / 2 - 324 + (81 * (i - 4)), 550);
+        c.stroke();
+        Rectangle(canvas.width / 2 - 324 + (81 * (i - 4)), 550, 64, i);
+    }
+    for(var i = 1; i < 4; i++){
+        c.beginPath();
+        c.moveTo(canvas.width / 2, 300);
+        c.lineTo(canvas.width / 2 - 243 + 243* (i - 1), 450);
+        c.stroke();
+        Rectangle(canvas.width / 2 -243 + (243* (i - 1)), 450, 128, i);
+    }
     
+    Rectangle(canvas.width / 2, 300, 256, 0);
+    if (canvas.width > 1300){
+        c.drawImage(quote, canvas.width - 360, 200, 310, 400)
+        c.drawImage(quote2, 40, 200, 310, 400) 
+    }    
 }
 
 init()

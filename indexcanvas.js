@@ -25,23 +25,6 @@ addEventListener('resize', function () {
 
     init();
 });
-for(let i = 0; i < touchEvents.length; i++){
-   addEventListener(touchEvents[i], function () {
-       if (mouse.x < canvas.width / 2 && mouse.y < canvas.height / 2) {
-           window.open('mental/mental.html', '_self');
-       }
-        else if (mouse.x > canvas.width / 2 && mouse.y < canvas.height / 2) {
-           window.open('spiritual/spiritual.html', '_self');
-       }
-        else if (mouse.x < canvas.width / 2 && mouse.y > canvas.height / 2) {
-           window.open('physical/physical.html', '_self');
-        }
-        else {
-           window.open('emotional/emotional.html', '_self');
-        }
-    }); 
-}
-    
 
 addEventListener('touchmove', event => {
     mouse.x = event.clientX
@@ -50,7 +33,22 @@ addEventListener('touchmove', event => {
     event.stopPropogation();
 }, false);
 
-
+for(let i = 0; i < touchEvents.length; i++){
+   addEventListener(touchEvents[i], function () {
+       if (mouse.x < canvas.width / 2 && mouse.y < canvas.height / 2) {
+           window.open('/mental/mental.html', '_self');
+       }
+        else if (mouse.x > canvas.width / 2 && mouse.y < canvas.height / 2) {
+           window.open('/spiritual/spiritual.html', '_self');
+       }
+        else if (mouse.x < canvas.width / 2 && mouse.y > canvas.height / 2) {
+           window.open('/physical/physical.html', '_self');
+        }
+        else {
+           window.open('/emotional/emotional.html', '_self');
+        }
+    }); 
+}
 
 // Utility Functions
 function randomIntFromRange(min, max) {
