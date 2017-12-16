@@ -18,6 +18,7 @@ var sad_emoji = new Image();
 var angry_emoji = new Image();
 var fearful_emoji = new Image();
 var disgusted_emoji = new Image();
+var html_count = 0;
 happy_emoji.src = 'http://al-taiclub.com/images/crying-emoji-clipart-17.png'
 sad_emoji.src = 'https://cdn.shopify.com/s/files/1/1061/1924/products/Sad_Face_Emoji_large.png?v=1480481055'
 angry_emoji.src = 'https://cdn.shopify.com/s/files/1/1061/1924/products/Very_Angry_Emoji_7f7bb8df-d9dc-4cda-b79f-5453e764d4ea_large.png?v=1480481058'
@@ -120,22 +121,36 @@ function animate() {
     if (emotion == 'happy'){
         c.fillStyle = 'rgba(255, 255, 100, 1)'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
+        c.fillStyle = 'black'
+        c.fillText('test', canvas.width / 2, 400);
+        if (html_count == 0){
+            document.getElementById('tag-id').innerHTML = '<p>test</p>'
+            html_count = 1;
+        }
     }
     if (emotion == 'sad'){
         c.fillStyle = 'rgba(148,0,211, 1)'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
+        c.fillStyle = 'black'
+        c.fillText('test 2', canvas.width / 2, 400);
     }
     if (emotion == 'angry'){
         c.fillStyle = 'rgba(255, 0, 0, 1)'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
+        c.fillStyle = 'black'
+        c.fillText('test 3', canvas.width / 2, 400);
     }
     if (emotion == 'scared'){
         c.fillStyle = 'rgba(0, 0, 0, 1)'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
+        c.fillStyle = 'white'
+        c.fillText('test 4', canvas.width / 2, 400);
     }
     if(emotion == 'disgusted'){
         c.fillStyle = '#A3C00F'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
+        c.fillStyle = 'black'
+        c.fillText('test 5', canvas.width / 2, 400);
     }
     // objects.forEach(object => {
     //  object.update();

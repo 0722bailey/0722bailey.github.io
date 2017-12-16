@@ -128,7 +128,7 @@ function init() {
 
     for (var i = 0; i < 100; i++) {
         const radius = (Math.random() * 2) + 1;
-        particles.push(new Particle(canvas.width / 2, canvas.height / 2, radius, 'blue'));
+        particles.push(new Particle(canvas.width / 2, canvas.height / 2 + 50, radius, 'blue'));
     }
 }
 //fps counter variables

@@ -40,10 +40,10 @@ var quote3 = new Image()
 quote3.src = 'https://i.pinimg.com/originals/88/6d/a7/886da72583bfe905c90bb30de51ffbe3.jpg'
 
 var alerts = [
-    'playing with my dog luno',
-    'exercising daily',
-    'eating healthy',
-    'balanced and routine sleep'
+    'Jouer avec mon chien, Luno. Les jeux qui je peux jouer avec il est: tir à la corde, rapporte, des promenades, etc.',
+    "l'exercise chaque jour. Le 7 minute exercise application est un très bon méthode d'exercise si je n'ai pas beaucoup de temp",
+    "Alimentation saine. Si je ne bois pas des boissons gazeuse ou si je ne mange pas des cochonneries, je peux aider avec mes habitutes alimentaires. Aussi, si je mange de nourriture cuisinée à la maison ou mange de nourriture saine, ça va aider aussi. ",
+    'sommeil équilibré. Si je dorme pour 8 heures MINIMUM chaque jour, mon sommeil va être équilibré. Je dois éteind les électroniques à 9h00 et dorme a 10h00.'
 ]
 // Event Listeners
 addEventListener('mousemove', event => {

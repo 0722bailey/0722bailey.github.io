@@ -19,14 +19,20 @@ img.src = '/stickmen/meditate.png'
 var frame = 0;
 var frameStart = performance.now();
 
+var quote = new Image();
+quote.src = 'http://quotesnew.com/wp-content/uploads/2017/05/25-inspirational-spiritual-quotes-that-will-brighten-your-life-839517.jpg'
+
+var quote2 = new Image();
+quote2.src = 'https://i.pinimg.com/736x/9b/87/a0/9b87a0a8c6de93af68c2abf959e5c59e--spiritual-meditation-meditation-quotes.jpg'
+
 var alerts = [
-    'universal chakra',
-    'third eye chakra',
-    'throat chakra',
-    'heart chakra',
-    'solar plexus chakra',
-    'sacral chakra',
-    'root chakra' 
+    "chakra universel: la balance de mon spiritualité est très important. Je peux connecter plus avec mon spiritualité par méditer, prier, ou si je n'ai pas de temp seulement apprecier tout que la vie offert. ",
+    "chakra 3e oeil: chakra gorge est de parler, mais chakra de 3e oeil est d'écouter. C'est aussi de voie <<entre des lignes>> et d'utiliser la 3e oeil de voie comment la monde est vraiment. Je dois écouter les autres plus et penser dans un plus grand perspectif. Juger les personnes pour ce qu'il est, au lieu d'un stéreotype. Si je seulement documenter cela, ça peut aider beaucoup a voie le monde plus positivement. ",
+    "chakra gorge: Je dois parler plus mes pensées. Je suis un introverti. Si je peux concentrer à parler mes petit pensées (à raison), ou seulement parler avec moi-même, je peux balancer cette chakra et finalement parler avec milles de personnes comme un chef. Un très bon citation qu'un homme m'a dit est: <<essayer d'être réjeter un foi chaque jour. Tu vas voir comment difficile cela est.>>",
+    "chakra coeur: Je dois aimer les choses avec mon coeur. Maintenant, je n'ai pas très soins au autre. Pour balancer cela, je dois aider moi-même un peu, je dois aimer moi-même. Après je peux faire cela, je dois aimer plus les personnes proche a moi, comme ma famille. Fais des petits choses, comme aider avec la maison et diser à ils que j'aime beaucoup. Un coeur parfait doit pratiquer, mais après la pratique, je veux aimer le monde. ",
+    "chakra plexus solaire: cette chakra controle le petit voie, un instinct. Pour aider avec ce chakra, je dois apprendre ce que cette voie dit et juger si c'est vrai ou si c'est faux. Pour faire cela, je besoin de parler avec les personnes qui sont très proche à moi de cette instinct et avoir de guidance. ",
+    'chakra sacré: ',
+    "chakra racine: je doit créer un fondation pour ma vie. Gradulement, je dois créer des racines de mon spiritualité. Si je document se que je pense et si j'accepte plus des réligions et ses idées, ça peux donne-moi un très bon base pour mon vie spirituel"
 ]
 
 // Event Listeners
@@ -125,7 +131,6 @@ function init() {
     }
 }
 
-
 var increment = 0;
 var y = 0;
 // Animation Loop
@@ -158,6 +163,10 @@ function animate() {
     // objects.forEach(object => {
     //  object.update();
     // });
+    if (canvas.width > 1300){
+    c.drawImage(quote, canvas.width - 380, 200, 350, 350)
+    c.drawImage(quote2, 40, 200, 350, 350) 
+    }
 }
 
 init()
