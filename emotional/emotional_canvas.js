@@ -44,18 +44,23 @@ addEventListener('click', () => {
     if(mouse.y > 200 && mouse.y < 300){
        if (mouse.x > canvas.width / 20 && mouse.x < canvas.width / 20 + 100) {
            emotion = 'happy'
+           html_count = 0;
        }
         else if (mouse.x > canvas.width / 4 && mouse.x < canvas.width / 4 + 100){
             emotion = 'sad'
+            html_count = 0;
         }
         else if(mouse.x > canvas.width / 2 - canvas.width / 30 && mouse.x < canvas.width / 2 - canvas.width / 30 + 100){
             emotion = 'angry'
+            html_count = 0;
         }
         else if(mouse.x > canvas.width / 1.55 && mouse.x < canvas.width / 1.55 + 100){
             emotion = 'scared'
+            html_count = 0;
         }
         else if(mouse.x > canvas.width / 1.2 && mouse.x < canvas.width / 1.2 + 100){
             emotion = 'disgusted'
+            html_count = 0;
         }
     }
     console.log(emotion)
@@ -121,36 +126,42 @@ function animate() {
     if (emotion == 'happy'){
         c.fillStyle = 'rgba(255, 255, 100, 1)'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
-        c.fillStyle = 'black'
-        c.fillText('test', canvas.width / 2, 400);
         if (html_count == 0){
-            document.getElementById('tag-id').innerHTML = '<p>test</p>'
+            document.getElementById('tag-id').innerHTML = '<h2><br><br><br><br><br><br><br><br><br><br>La Joie</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/0C3zgYW_FAM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>'
             html_count = 1;
         }
     }
     if (emotion == 'sad'){
         c.fillStyle = 'rgba(148,0,211, 1)'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
-        c.fillStyle = 'black'
-        c.fillText('test 2', canvas.width / 2, 400);
+        if (html_count == 0){
+            document.getElementById('tag-id').innerHTML = '<h2><br><br><br><br><br><br><br><br><br><br>La tristesse</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/4zLfCnGVeL4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>'
+            html_count = 1;
+        }
     }
     if (emotion == 'angry'){
         c.fillStyle = 'rgba(255, 0, 0, 1)'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
-        c.fillStyle = 'black'
-        c.fillText('test 3', canvas.width / 2, 400);
+        if (html_count == 0){
+            document.getElementById('tag-id').innerHTML = '<h2><br><br><br><br><br><br><br><br><br><br>La colère</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/opyVdN8GZtc" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>'
+            html_count = 1;
+        }
     }
     if (emotion == 'scared'){
         c.fillStyle = 'rgba(0, 0, 0, 1)'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
-        c.fillStyle = 'white'
-        c.fillText('test 4', canvas.width / 2, 400);
+        if (html_count == 0){
+            document.getElementById('tag-id').innerHTML = '<div style="color: white;"><h2><br><br><br><br><br><br><br><br><br><br>L&apos;effrayant </h2><iframe width="560" height="315" src="https://www.youtube.com/embed/CD-E-LDc384" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>'
+            html_count = 1;
+        }
     }
     if(emotion == 'disgusted'){
         c.fillStyle = '#A3C00F'
         c.fillRect(0, 350, canvas.width, canvas.height - 250)
-        c.fillStyle = 'black'
-        c.fillText('test 5', canvas.width / 2, 400);
+        if (html_count == 0){
+            document.getElementById('tag-id').innerHTML = '<h2><br><br><br><br><br><br><br><br><br><br>le dégouter</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/kffacxfA7G4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>'
+            html_count = 1;
+        }
     }
     // objects.forEach(object => {
     //  object.update();
