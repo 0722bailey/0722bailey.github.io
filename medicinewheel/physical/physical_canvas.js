@@ -13,8 +13,14 @@ const mouse = {
 
 const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66']
 
-var img = new Image();
-img.src = '/medicinewheel/stickmen/frame0.png'
+var img = [];
+
+for(let i = 0; i < 9; i++){
+  img[i] = new Image();
+    img[i].src = '/medicinewheel/stickmen/frame'+i+'.png'
+}
+    
+
 var frame = 0;
 var frameStart = performance.now();
 
@@ -117,19 +123,6 @@ function Object(x, y, radius, color) {
 	}
 }
 
-function Stickman(){
-    frame++;
-    for(let i = 0; i < 9; i++){
-        if (frame == i){
-            img.src='/medicinewheel/stickmen/frame'+i+'.png'
-        }
-        else if(frame > 8) {
-            frame = 0;
-            img.src='/medicinewheel/stickmen/frame0.png'
-        }
-    }
-}
-
 // Implementation
 let objects
 function init() {
@@ -160,13 +153,17 @@ function animate() {
     if (canvas.width + 1950 + 388.8 - increment < 0){
         increment = 0;
     }
-    
     // stickfigure
     if (performance.now() - frameStart > 60){
-        Stickman()
+        if (frame < 8){
+          frame++;
+        }
+        else{
+            frame = 0;
+        }
         frameStart = performance.now()
     }
-    c.drawImage(img, canvas.width / 2 - (105 / 2), 474, 105, 126)
+    c.drawImage(img[frame], canvas.width / 2 - (105 / 2), 474, 105, 126)
     
     // ground
     c.strokeStyle='white'
