@@ -15,7 +15,7 @@ const mouse = {
 const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66']
 
 var img = new Image();
-img.src = '/medicinewheel/stickmen/meditate.png'
+img.src = '/medicine-wheel/stickmen/meditate.png'
 var frame = 0;
 var frameStart = performance.now();
 

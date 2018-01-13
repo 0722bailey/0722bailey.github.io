@@ -4,13 +4,47 @@
     <meta charset="UTF-8">
     <title>Bailey's Github Page</title>
     <style type="text/css">
+        ::-moz-selection{
+            background-color:Transparent;
+            color:#000;
+        }
+
+        ::selection {
+            background-color:Transparent;
+            color:#000;
+        }
+        canvas {
+            position: absolute;
+            border: 1px solid black;
+        }
+        .html-on-canvas {
+            position: absolute; 
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            font-family: Monospace; 
+        }
         html, body {
-            text-align: center;
+            width: 100%;
+            height: 100%;    
+            margin: 0px;
+        }
+        ::-webkit-scrollbar { 
+            display: none; 
         }
     </style>
 </head>
 <body>
-    <h1>Bailey's Github Page</h1>
-    <h2><a href='/medicinewheel/index.html'> Religion project - Medicine Wheel (en français) </a></h2>
+    <canvas></canvas>
+    <script src='/beginner-games/breakout.js'></script>
+    <script src='/beginner-games/pong.js'></script>
+    <script src='/beginner-games/canvas.js'></script>
+    <div class='html-on-canvas'>    
+        <h1>Bailey's Github Page</h1>
+        <h2><a href='/medicine-wheel/index.html'> Religion ISU - Medicine Wheel (en français) </a></h2>
+        <div id='tag-id'>
+            <h2><a href='#' onclick='game_text++; console.log(game_text);'>Games</a></h2>
+        </div>
+    </div>
 </body>
 </html>

@@ -17,7 +17,7 @@ var img = [];
 
 for(let i = 0; i < 9; i++){
   img[i] = new Image();
-    img[i].src = '/medicinewheel/stickmen/frame'+i+'.png'
+    img[i].src = '/medicine-wheel/stickmen/frame'+i+'.png'
 }
     
 

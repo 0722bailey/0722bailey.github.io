@@ -36,16 +36,16 @@ addEventListener('touchmove', event => {
 for(let i = 0; i < touchEvents.length; i++){
    addEventListener(touchEvents[i], function () {
        if (mouse.x < canvas.width / 2 && mouse.y < canvas.height / 2) {
-           window.open('/medicinewheel/mental/mental.html', '_self');
+           window.open('/medicine-wheel/mental/mental.html', '_self');
        }
         else if (mouse.x > canvas.width / 2 && mouse.y < canvas.height / 2) {
-           window.open('/medicinewheel/spiritual/spiritual.html', '_self');
+           window.open('/medicine-wheel/spiritual/spiritual.html', '_self');
        }
         else if (mouse.x < canvas.width / 2 && mouse.y > canvas.height / 2) {
-           window.open('/medicinewheel/physical/physical.html', '_self');
+           window.open('/medicine-wheel/physical/physical.html', '_self');
         }
         else {
-           window.open('/medicinewheel/emotional/emotional.html', '_self');
+           window.open('/medicine-wheel/emotional/emotional.html', '_self');
         }
     }); 
 }
