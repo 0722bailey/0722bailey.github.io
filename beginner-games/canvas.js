@@ -28,7 +28,7 @@ function BallRandomizer(value){
         return -value;
     }
 }
-var speed = canvas.width/100
+var speed = 10
 ball = {
     x: canvas.width/2,
     y: canvas.height/2,
@@ -36,6 +36,11 @@ ball = {
     dy: BallRandomizer(speed)
 }
 var radius = canvas.height/100
+var ai = {y: ball.y}
+var score = {
+    player: 0,
+    ai: 0
+}
 
 window.onload = function() {
     game_text = 1; // 0 prevents html spam, 1 lists 'games', 2 lists all the games available, 3 plays pong and lists 'games', 4 plays breakout and lists 'games', etc.
@@ -51,9 +56,18 @@ addEventListener('mousemove', event => {
 addEventListener('resize', () => {
     canvas.width = innerWidth
     canvas.height = innerHeight
-    speed = canvas.width/100
+    speed = 10
 })
 
+addEventListener('click', event => {
+    console.log(event)
+})
+
+addEventListener('keyup', event => {
+    if (event.code == 'Escape'){
+        game = 0;
+    }
+})
 // Utility Functions
 function randomIntFromRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -123,30 +137,32 @@ function animate() {
         if (game_text != 1){
             game = game_text - 2
             console.log(game)
-            if (game_text == 3){
-                invert()
-                console.log(paddle)
-            }
         }
         game_text = 0;
+        ball = {
+        x: canvas.width/2,
+        y: canvas.height/2,
+        dx: BallRandomizer(speed),
+        dy: BallRandomizer(speed)
+        }
     }
     if (game_text == 2) {
-       document.getElementById('tag-id').innerHTML = "<h2><a href='#' onclick='game_text = 3;'>Impossible Pong</a></h2><h2><a href='#' onclick='game_text = 4;'>Breakout</a></h2>" 
+       document.getElementById('tag-id').innerHTML = "<h2><a href='#' onclick='game_text = 3;'>Pong</a></h2><h2><a href='#' onclick='game_text = 4;'>Breakout</a></h2>" 
         game_text = 0;
     }
     
     if (game == 1){
-        Paddle(canvas.width - 20, ball.y, 10, canvas.height / 10, 1)
+        Paddle(canvas.width - 20, ai.y, 10, canvas.height / 10, 1)
+        c.font = '30px Monospace'
+        c.fillText(score.player, 25, canvas.height - 15)
+        c.fillText(score.ai, canvas.width - 45, canvas.height - 15)
+        c.font = '20px Monospace'
+        c.fillText("Press the ESC key to end the game", canvas.width / 2 - 184, canvas.height - 15)
         Ball()
+        Ai()
     }
     if (game == 2){
-        paddle[1] = {
-            x: canvas.width - radius - 10,
-            y: 0,
-            width: 10,
-            heigth: canvas.height
-        }
         Ball()
     }
 }
-animate()
+animate();
